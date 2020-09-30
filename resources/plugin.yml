@@ -1,0 +1,7 @@
+name: BlockShuffle
+author: kappacite
+version: 1.0.0
+main: fr.kappacite.blockshuffle.BlockShuffle
+commands:
+ start:
+  description: start
