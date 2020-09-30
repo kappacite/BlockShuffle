@@ -15,6 +15,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.net.URISyntaxException;
+
 public class BlockShuffle extends JavaPlugin {
 
     private TasksManager tasksManager;
@@ -25,6 +27,14 @@ public class BlockShuffle extends JavaPlugin {
     private Game game;
     private static BlockShuffle instance;
 
+    public void onLoad(){
+        this.worldManager = new WorldManager();
+        try {
+            this.worldManager.eraseWorld();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void onEnable(){
 
@@ -39,7 +49,6 @@ public class BlockShuffle extends JavaPlugin {
         this.packets = new Packets();
         this.tasksManager = new TasksManager();
         this.blockManager = new BlockManager();
-        this.worldManager = new WorldManager();
         this.scoreboardManager = new ScoreboardManager();
         this.game = new Game();
         this.worldManager.initialiseWorld();

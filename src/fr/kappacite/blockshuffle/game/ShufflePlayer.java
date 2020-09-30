@@ -73,7 +73,6 @@ public class ShufflePlayer {
         this.hasFound = true;
         this.setFoundListName();
 
-        System.out.println(BlockShuffle.getInstance().getGame().getPointLimit());
         return this.getPoint() >= BlockShuffle.getInstance().getGame().getPointLimit();
     }
 
@@ -81,6 +80,8 @@ public class ShufflePlayer {
         this.hasFound = false;
         this.material = material;
         this.setNotFoundListName();
+        FileConfiguration lang = YamlConfiguration.loadConfiguration(new File(BlockShuffle.getInstance().getDataFolder() + File.separator + "lang.yml"));
+        this.player.sendMessage("§bTon bloc a trouvé est§f: §3" + lang.getString(material.name()) + "§9.");
     }
 
     private void setNotFoundListName(){

@@ -39,9 +39,7 @@ public class BlockManager {
 
         Material[] blockArrays = this.getLevel();
 
-        Material block = blockArrays[new Random().nextInt(blockArrays.length-1)];
-        System.out.println(block);
-        System.out.println(blockArrays);
+        Material block = blockArrays[new Random().nextInt(blockArrays.length > 1 ? (blockArrays.length-1) : 0)];
 
         List<ShufflePlayer> shufflePlayerList = ShufflePlayer.getShufflePlayers();
 

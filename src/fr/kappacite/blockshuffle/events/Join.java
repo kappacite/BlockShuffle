@@ -3,11 +3,11 @@ package fr.kappacite.blockshuffle.events;
 import fr.kappacite.blockshuffle.BlockShuffle;
 import fr.kappacite.blockshuffle.game.Game;
 import fr.kappacite.blockshuffle.game.TasksManager;
+import jdk.nashorn.internal.ir.Block;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -29,6 +29,8 @@ public class Join implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
 
+
+
         Player player = event.getPlayer();
         Game game = BlockShuffle.getInstance().getGame();
         TasksManager tasksManager = BlockShuffle.getInstance().getTasksManager();
@@ -41,7 +43,11 @@ public class Join implements Listener {
         player.getInventory().clear();
         player.getEquipment().setArmorContents(new ItemStack[]{});
 
+        event.setJoinMessage("§8[§9BlockShuffle§8] §a" + player.getName() + " §7a rejoint la partie ! §8(§a" +
+                Bukkit.getOnlinePlayers().size() + "§8/§a" + game.getMaxPlayers() + "§8)");
+
         BlockShuffle.getInstance().getScoreboardManager().createScoreboard(player);
+        BlockShuffle.getInstance().getPackets().sendTablist(player);
 
         if(Bukkit.getOnlinePlayers().size() == game.getMinPlayers() && !tasksManager.isStarted()){
             tasksManager.startPregameTimer();

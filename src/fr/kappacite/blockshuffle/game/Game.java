@@ -1,10 +1,10 @@
 package fr.kappacite.blockshuffle.game;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
+import org.bukkit.*;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.util.Vector;
 
 public class Game {
 
@@ -23,11 +23,14 @@ public class Game {
     }
 
     public void start(){
+
+        blockShuffle.getWorldManager().eraseSpawn();
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
             ShufflePlayer.instance(onlinePlayer);
             onlinePlayer.setGameMode(GameMode.SURVIVAL);
         }
         this.round.newRound(false);
+        this.teleport();
     }
 
     public void win(ShufflePlayer player){
@@ -36,7 +39,23 @@ public class Game {
             blockShuffle.getPackets().sendTitle(onlinePlayer, ChatColor.AQUA + player.getPlayer().getName(), ChatColor.AQUA + "a gagné !", 20);
         }
 
-        Bukkit.getScheduler().scheduleSyncDelayedTask(blockShuffle, Bukkit::shutdown, 100);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(blockShuffle, () -> Bukkit.spigot().restart(), 100);
+    }
+
+    private void teleport(){
+        int x = 300;
+        int z = 300;
+        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+            World world = Bukkit.getWorld("blockshuffle");
+            Block block = world.getHighestBlockAt(x, z);
+
+            onlinePlayer.setVelocity(new Vector(0, 0, 0));
+            onlinePlayer.teleport(block.getLocation());
+
+            if(x < z) { x+=300; continue; }
+            if(z < x) { z+=300; continue; }
+            if(z == x) x+=300;
+        }
     }
 
     public Round getRound() {

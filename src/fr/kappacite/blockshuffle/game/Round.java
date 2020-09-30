@@ -14,7 +14,6 @@ public class Round {
 
     public Round(){
         this.blockManager = blockShuffle.getBlockManager();
-        System.out.println(blockManager);
     }
 
     private int id = 0;
@@ -40,8 +39,6 @@ public class Round {
         this.blockManager.giveBlocks();
 
         this.task = Bukkit.getScheduler().runTaskTimerAsynchronously(BlockShuffle.getInstance(), () -> {
-
-            Bukkit.broadcastMessage("timer " + this.timer);
 
             if(this.timer == 0){
                 this.task.cancel();

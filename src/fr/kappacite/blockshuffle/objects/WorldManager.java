@@ -14,14 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class WorldManager {
 
     public void initialiseWorld(){
-
-        Bukkit.unloadWorld("blockshuffle", false);
-
-        try {
-            this.eraseWorld();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
         this.generateLobby();
         World world = Bukkit.getWorld("blockshuffle");
         world.setPVP(false);
@@ -63,6 +55,21 @@ public class WorldManager {
                 world.getBlockAt(wallRadius, y + 1, (int) z).setType(Material.STAINED_GLASS_PANE);
             }
         }
+    }
+
+    public void eraseSpawn(){
+
+        int radius = 11;
+        World world = Bukkit.getWorld("blockshuffle");
+
+        for(int x = -radius; x<= radius; x++) {
+            for(int y = 200; y <= 202; y++){
+                for (int z = -radius; z <= radius; z++) {
+                    world.getBlockAt(x, y, z).setType(Material.AIR);
+                }
+            }
+        }
+
     }
 
     public void eraseWorld() throws URISyntaxException {
