@@ -7,6 +7,7 @@ import fr.kappacite.blockshuffle.objects.comparator.PointComparator;
 import fr.minuskube.netherboard.Netherboard;
 import fr.minuskube.netherboard.bukkit.BPlayerBoard;
 import org.bukkit.ChatColor;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
 import java.util.Collections;

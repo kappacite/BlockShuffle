@@ -18,7 +18,7 @@ public class Round {
     }
 
     private int id = 0;
-    private int timer = 30;
+    private int timer = 300;
     private BukkitTask task;
 
     public void newRound(boolean skip){
@@ -35,7 +35,7 @@ public class Round {
         }
 
         this.id++;
-        this.timer = 30;
+        this.timer = 300;
         this.blockManager.giveBlocks();
 
         this.task = Bukkit.getScheduler().runTaskTimerAsynchronously(BlockShuffle.getInstance(), () -> {

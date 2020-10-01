@@ -46,6 +46,7 @@ public class Game {
     private void teleport(){
         int x = 300;
         int z = 300;
+
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
             World world = Bukkit.getWorld("blockshuffle");
             Block block = world.getHighestBlockAt(x, z);

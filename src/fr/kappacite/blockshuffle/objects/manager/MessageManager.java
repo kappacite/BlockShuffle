@@ -21,7 +21,7 @@ public class MessageManager {
     }
 
     public void sendNotFoundBlocksPlayer(int numberNotFound){
-        Bukkit.broadcastMessage(this.PREFIX + ChatColor.DARK_RED + " " + numberNotFound + ChatColor.RED + " joueur(s) n'ont pas trouvé leurs bloc.");
+        Bukkit.broadcastMessage(this.PREFIX + ChatColor.DARK_RED + numberNotFound + ChatColor.RED + " joueur(s) n'ont pas trouvé leurs bloc.");
     }
 
     public String getJoinMessage(Player player){

@@ -75,7 +75,6 @@ public class WorldManager {
 
         String serverPath = Paths.get(Bukkit.getServer().getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParent().toFile().getPath() + "\\blockshuffle";
 
-        System.out.println(serverPath);
         File world = new File(serverPath);
         erase(world);
 

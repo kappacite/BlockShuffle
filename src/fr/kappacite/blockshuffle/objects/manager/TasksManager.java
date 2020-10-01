@@ -23,7 +23,7 @@ public class TasksManager {
     }
 
     private void startScoreboardTask(){
-       Bukkit.getScheduler().runTaskTimerAsynchronously(blockShuffle, (() -> Bukkit.getOnlinePlayers().forEach(player -> blockShuffle.getScoreboardManager().updateScoreboard(player))), 20, 20);
+       Bukkit.getScheduler().scheduleSyncRepeatingTask(blockShuffle, (() -> Bukkit.getOnlinePlayers().forEach(player -> blockShuffle.getScoreboardManager().updateScoreboard(player))), 20, 20);
     }
 
     public void startPregameTimer(){

@@ -82,9 +82,9 @@ public class ShufflePlayer {
 
         this.hasFound = false;
         this.material = material;
+        this.materialName = lang.getString(this.material.name());
         this.setNotFoundListName();
         BlockShuffle.getInstance().getMessageManager().sendPlayerBlock(this);
-        this.materialName = lang.getString(this.material.name());
     }
 
     private void setNotFoundListName(){
