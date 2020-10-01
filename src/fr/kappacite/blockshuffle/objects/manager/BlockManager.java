@@ -27,6 +27,7 @@ public class BlockManager {
 
     public boolean canSkipRound(){
         List<ShufflePlayer> shufflePlayerList = ShufflePlayer.getShufflePlayers();
+
         for (ShufflePlayer shufflePlayer : shufflePlayerList) {
             if(!shufflePlayer.hasFound()) return false;
         }
@@ -41,7 +42,6 @@ public class BlockManager {
     public void giveBlocks(){
 
         Material[] blockArrays = this.getLevel();
-
         Material block = blockArrays[new Random().nextInt(blockArrays.length > 1 ? (blockArrays.length-1) : 0)];
 
         List<ShufflePlayer> shufflePlayerList = ShufflePlayer.getShufflePlayers();

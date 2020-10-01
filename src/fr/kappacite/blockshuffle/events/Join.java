@@ -3,7 +3,6 @@ package fr.kappacite.blockshuffle.events;
 import fr.kappacite.blockshuffle.BlockShuffle;
 import fr.kappacite.blockshuffle.objects.game.Game;
 import fr.kappacite.blockshuffle.objects.manager.TasksManager;
-import jdk.nashorn.internal.ir.Block;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -33,8 +32,7 @@ public class Join implements Listener {
         Game game = BlockShuffle.getInstance().getGame();
         TasksManager tasksManager = BlockShuffle.getInstance().getTasksManager();
 
-        player.teleport(new Location(Bukkit.getWorld("blockshuffle" +
-                ""), 0, 201, 0));
+        player.teleport(new Location(Bukkit.getWorld("blockshuffle"), 0, 201, 0));
         player.setGameMode(GameMode.ADVENTURE);
         player.setFoodLevel(20);
         player.setHealth(20);

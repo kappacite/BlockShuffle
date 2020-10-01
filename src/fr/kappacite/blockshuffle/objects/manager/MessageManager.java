@@ -4,11 +4,7 @@ import fr.kappacite.blockshuffle.BlockShuffle;
 import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-
-import java.io.File;
 
 public class MessageManager {
 

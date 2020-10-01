@@ -10,9 +10,7 @@ import org.bukkit.event.entity.FoodLevelChangeEvent;
 public class MicroEvents implements Listener {
 
     @EventHandler
-    public void onFoodLevelChange(FoodLevelChangeEvent event){
-        if(!GameState.isState(GameState.GAME)) event.setCancelled(true);
-    }
+    public void onFoodLevelChange(FoodLevelChangeEvent event){ if(!GameState.isState(GameState.GAME)) event.setCancelled(true); }
 
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event){
@@ -23,7 +21,5 @@ public class MicroEvents implements Listener {
     public void onBlockPlace(BlockPlaceEvent event){
         if(!GameState.isState(GameState.GAME)) event.setCancelled(true);
     }
-
-
 
 }

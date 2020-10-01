@@ -12,6 +12,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class WorldManager {
 
+    private final int SPAWN_RADIUS = 11;
+
     public void initialiseWorld(){
         this.generateLobby();
         World world = Bukkit.getWorld("blockshuffle");
@@ -21,13 +23,12 @@ public class WorldManager {
 
     private void generateLobby(){
         this.createWorld();
-        int radius = 11;
         int wallRadius = 10;
         
         World world = Bukkit.getWorld("blockshuffle");
 
-        for(double x = -radius; x<= radius; x++){
-            for(double z = -radius; z<= radius; z++){
+        for(double x = -SPAWN_RADIUS; x<= SPAWN_RADIUS; x++){
+            for(double z = -SPAWN_RADIUS; z<= SPAWN_RADIUS; z++){
                 world.getBlockAt((int) x, 200, (int) z).setType(Material.STAINED_GLASS);
             }
         }
@@ -58,12 +59,11 @@ public class WorldManager {
 
     public void eraseSpawn(){
 
-        int radius = 11;
         World world = Bukkit.getWorld("blockshuffle");
 
-        for(int x = -radius; x<= radius; x++) {
+        for(int x = -SPAWN_RADIUS; x<= SPAWN_RADIUS; x++) {
             for(int y = 200; y <= 202; y++){
-                for (int z = -radius; z <= radius; z++) {
+                for (int z = -SPAWN_RADIUS; z <= SPAWN_RADIUS; z++) {
                     world.getBlockAt(x, y, z).setType(Material.AIR);
                 }
             }

@@ -13,7 +13,7 @@ public class StartCommand implements CommandExecutor {
         if(label.equalsIgnoreCase("start")){
 
             BlockShuffle blockShuffle = BlockShuffle.getInstance();
-            if(GameState.isState(GameState.LOBBY)){
+            if(GameState.isState(GameState.LOBBY) && sender.isOp()){
                 blockShuffle.getTasksManager().startPregameTimer();
             }
 

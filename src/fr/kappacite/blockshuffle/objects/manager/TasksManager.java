@@ -23,9 +23,7 @@ public class TasksManager {
     }
 
     private void startScoreboardTask(){
-       Bukkit.getScheduler().runTaskTimerAsynchronously(blockShuffle, (() -> {
-            Bukkit.getOnlinePlayers().forEach(player -> blockShuffle.getScoreboardManager().updateScoreboard(player));
-        }), 20, 20);
+       Bukkit.getScheduler().runTaskTimerAsynchronously(blockShuffle, (() -> Bukkit.getOnlinePlayers().forEach(player -> blockShuffle.getScoreboardManager().updateScoreboard(player))), 20, 20);
     }
 
     public void startPregameTimer(){
@@ -79,8 +77,8 @@ public class TasksManager {
                 Player player = shufflePlayer.getPlayer();
 
                 if(player.getLocation().add(0, -1, 0).getBlock().getType() == shufflePlayer.getMaterial()){
-                    boolean isWin = blockShuffle.getBlockManager().found(shufflePlayer);
-                    if(isWin){
+                    boolean hasWin = blockShuffle.getBlockManager().found(shufflePlayer);
+                    if(hasWin){
                         blockShuffle.getGame().win(shufflePlayer);
                         return;
                     }

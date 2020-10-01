@@ -1,7 +1,5 @@
 package fr.kappacite.blockshuffle.nms;
 
-import net.md_5.bungee.api.chat.BaseComponent;
-import net.md_5.bungee.api.chat.TextComponent;
 import net.minecraft.server.v1_8_R3.IChatBaseComponent;
 import net.minecraft.server.v1_8_R3.PacketPlayOutChat;
 import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerListHeaderFooter;

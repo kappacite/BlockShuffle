@@ -57,7 +57,6 @@ public class BlockShuffle extends JavaPlugin {
         pluginManager.registerEvents(new Join(), this);
         pluginManager.registerEvents(new Quit(), this);
         pluginManager.registerEvents(new MicroEvents(), this);
-
     }
 
     public void onDisable(){
