@@ -1,6 +1,6 @@
-package fr.kappacite.blockshuffle.objects;
+package fr.kappacite.blockshuffle.objects.comparator;
 
-import fr.kappacite.blockshuffle.game.ShufflePlayer;
+import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
 
 import java.util.Comparator;
 

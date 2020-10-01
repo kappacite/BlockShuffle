@@ -1,4 +1,4 @@
-package fr.kappacite.blockshuffle.game;
+package fr.kappacite.blockshuffle.objects.state;
 
 public enum GameState {
 

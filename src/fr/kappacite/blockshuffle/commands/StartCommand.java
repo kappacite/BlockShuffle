@@ -1,7 +1,7 @@
 package fr.kappacite.blockshuffle.commands;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
-import fr.kappacite.blockshuffle.game.GameState;
+import fr.kappacite.blockshuffle.objects.state.GameState;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

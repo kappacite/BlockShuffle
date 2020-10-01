@@ -1,8 +1,9 @@
-package fr.kappacite.blockshuffle.objects;
+package fr.kappacite.blockshuffle.objects.manager;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
-import fr.kappacite.blockshuffle.game.Round;
-import fr.kappacite.blockshuffle.game.ShufflePlayer;
+import fr.kappacite.blockshuffle.objects.game.Round;
+import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
+import fr.kappacite.blockshuffle.objects.comparator.PointComparator;
 import fr.minuskube.netherboard.Netherboard;
 import fr.minuskube.netherboard.bukkit.BPlayerBoard;
 import org.bukkit.ChatColor;

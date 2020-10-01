@@ -3,9 +3,43 @@ STONE: Pierre
 COBBLESTONE: Pierre taillée
 SAND: Sable
 CLAY: Argile
+WOOD: Planche de bois
+LOG: Bûche
+WORKBENCH: Table de Craft
+CHEST: Coffre
+GRAVEL: Gravier
+FURNACE: Four
+WOOL: Laine
+GLASS: Vitre
+LAPIS_ORE: Minerai de Lapis
+GOLD_ORE: Minerai d'or
+SMOOTH_BRICK: Pierre taillée
+REDSTONE_ORE: Minerai de Redstone
 IRON_ORE: Minerai de Fer
 COAL_ORE: Minerai de Charbon
 STAINED_GLASS: Verre teintée
-NETHERRACK: Pierre du Nether
-ENDER_STONE: Pierre de l'End
+IRON_BLOCK: Bloc de fer
+GOLD_BLOCK: Bloc d'or
+BRICK: Bloc de brique
+DISPENSER: Distributeur
+CAULDRON: Chaudron
+BOOKSHELF: Bibliothèque
+ANVIL: Enclume
+REDSTONE_BLOCK: Bloc de Redstone
+LAPIS_BLOCK: Bloc de Lapis
+SLIME_BLOCK: Bloc de Slime
 OBSIDIAN: Obsidienne
+NETHERRACK: Pierre du Nether
+ENCHANTMENT_TABLE: Table d'enchantement
+PISTON_BASE: Piston
+NOTE_BLOCK: Bloc de Musique
+JUKEBOX: Jukebox
+NETHER_BRICK: Brique du Nether
+DIAMOND_ORE: Minerai de Diamant
+ENDER_PORTAL: Portail de l'End
+ENDER_STONE: Pierre de l'End
+ENDER_CHEST: Coffre de l'End
+EMERALD_ORE: Minerai d'Emeraude
+EMERALD_BLOCK: Bloc d'Emeraude
+DIAMOND_BLOCK: Bloc de Diamant
+BEACON: Balise

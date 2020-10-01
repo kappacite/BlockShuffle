@@ -1,6 +1,6 @@
 package fr.kappacite.blockshuffle.events;
 
-import fr.kappacite.blockshuffle.game.GameState;
+import fr.kappacite.blockshuffle.objects.state.GameState;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;

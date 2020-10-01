@@ -1,10 +1,10 @@
 package fr.kappacite.blockshuffle.events;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
-import fr.kappacite.blockshuffle.game.Game;
-import fr.kappacite.blockshuffle.game.GameState;
-import fr.kappacite.blockshuffle.game.ShufflePlayer;
-import fr.kappacite.blockshuffle.game.TasksManager;
+import fr.kappacite.blockshuffle.objects.game.Game;
+import fr.kappacite.blockshuffle.objects.state.GameState;
+import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
+import fr.kappacite.blockshuffle.objects.manager.TasksManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

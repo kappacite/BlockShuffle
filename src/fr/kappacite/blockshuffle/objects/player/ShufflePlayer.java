@@ -1,8 +1,7 @@
-package fr.kappacite.blockshuffle.game;
+package fr.kappacite.blockshuffle.objects.player;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
-import jdk.nashorn.internal.ir.Block;
-import org.bukkit.Bukkit;
+import fr.kappacite.blockshuffle.objects.game.Round;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -46,7 +45,7 @@ public class ShufflePlayer {
 
     }
 
-    protected boolean found(){
+    public boolean found(){
 
         Round round = BlockShuffle.getInstance().getGame().getRound();
 

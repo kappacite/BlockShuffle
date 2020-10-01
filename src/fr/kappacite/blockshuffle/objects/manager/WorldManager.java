@@ -1,4 +1,4 @@
-package fr.kappacite.blockshuffle.objects;
+package fr.kappacite.blockshuffle.objects.manager;
 
 import org.bukkit.*;
 

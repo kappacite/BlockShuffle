@@ -1,13 +1,11 @@
-package fr.kappacite.blockshuffle.game;
+package fr.kappacite.blockshuffle.objects.manager;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
-import fr.kappacite.blockshuffle.game.GameState;
-import fr.kappacite.blockshuffle.game.ShufflePlayer;
+import fr.kappacite.blockshuffle.objects.state.GameState;
+import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
 import fr.kappacite.blockshuffle.nms.Packets;
 import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitTask;
 
 import java.util.List;
 

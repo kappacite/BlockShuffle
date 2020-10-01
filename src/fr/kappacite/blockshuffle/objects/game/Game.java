@@ -1,6 +1,7 @@
-package fr.kappacite.blockshuffle.game;
+package fr.kappacite.blockshuffle.objects.game;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
+import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;

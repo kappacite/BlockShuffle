@@ -1,6 +1,8 @@
-package fr.kappacite.blockshuffle.game;
+package fr.kappacite.blockshuffle.objects.game;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
+import fr.kappacite.blockshuffle.objects.manager.BlockManager;
+import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.scheduler.BukkitTask;

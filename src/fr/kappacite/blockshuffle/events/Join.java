@@ -1,9 +1,8 @@
 package fr.kappacite.blockshuffle.events;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
-import fr.kappacite.blockshuffle.game.Game;
-import fr.kappacite.blockshuffle.game.TasksManager;
-import jdk.nashorn.internal.ir.Block;
+import fr.kappacite.blockshuffle.objects.game.Game;
+import fr.kappacite.blockshuffle.objects.manager.TasksManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
