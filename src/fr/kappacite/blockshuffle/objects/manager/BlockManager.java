@@ -1,15 +1,10 @@
 package fr.kappacite.blockshuffle.objects.manager;
 
 import fr.kappacite.blockshuffle.BlockShuffle;
-import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
 import fr.kappacite.blockshuffle.objects.game.Round;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import fr.kappacite.blockshuffle.objects.player.ShufflePlayer;
 import org.bukkit.Material;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 
-import java.io.File;
 import java.util.List;
 import java.util.Random;
 
@@ -39,10 +34,7 @@ public class BlockManager {
     }
 
     public boolean found(ShufflePlayer shufflePlayer){
-        FileConfiguration lang = YamlConfiguration.loadConfiguration(new File(BlockShuffle.getInstance().getDataFolder() + File.separator + "lang.yml"));
-        Bukkit.broadcastMessage(ChatColor.DARK_AQUA + shufflePlayer.getPlayer().getName() + ChatColor.GREEN + " a trouvé son bloc "
-                + ChatColor.DARK_GRAY + "(" + ChatColor.DARK_AQUA + lang.getString(shufflePlayer.getMaterial().name())
-                + ChatColor.DARK_GRAY + ")" + ChatColor.GREEN + " !");
+        BlockShuffle.getInstance().getMessageManager().broadcastPlayerFoundBlock(shufflePlayer);
         return shufflePlayer.found();
     }
 

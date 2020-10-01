@@ -22,6 +22,7 @@ public class ShufflePlayer {
     private int point;
     private Material material;
     private boolean hasFound = false;
+    private String materialName;
 
     private ShufflePlayer(Player player, int point, Material material) {
         this.player = player;
@@ -76,24 +77,26 @@ public class ShufflePlayer {
     }
 
     public void newRound(Material material){
+
+        FileConfiguration lang = YamlConfiguration.loadConfiguration(new File(BlockShuffle.getInstance().getDataFolder() + File.separator + "lang.yml"));
+
         this.hasFound = false;
         this.material = material;
         this.setNotFoundListName();
-        FileConfiguration lang = YamlConfiguration.loadConfiguration(new File(BlockShuffle.getInstance().getDataFolder() + File.separator + "lang.yml"));
-        this.player.sendMessage("§bTon bloc a trouvé est§f: §3" + lang.getString(material.name()) + "§9.");
+        BlockShuffle.getInstance().getMessageManager().sendPlayerBlock(this);
+        this.materialName = lang.getString(this.material.name());
+
     }
 
     private void setNotFoundListName(){
-        FileConfiguration lang = YamlConfiguration.loadConfiguration(new File(BlockShuffle.getInstance().getDataFolder() + File.separator + "lang.yml"));
-        this.player.setPlayerListName(ChatColor.GRAY + "[" + lang.getString(this.material.name()) + " : " + point + "] " + ChatColor.RED + player.getName());
+        this.player.setPlayerListName(ChatColor.GRAY + "[" + this.materialName + " : " + this.point + "] " + ChatColor.RED + player.getName());
     }
 
     private void setFoundListName(){
-
-        FileConfiguration lang = YamlConfiguration.loadConfiguration(new File(BlockShuffle.getInstance().getDataFolder() + File.separator + "lang.yml"));
-        this.player.setPlayerListName(ChatColor.GRAY + "[" + lang.getString(this.material.name()) + " : " + point + "] " + ChatColor.GREEN + player.getName());
+        this.player.setPlayerListName(ChatColor.GRAY + "[" + this.materialName + " : " + this.point + "] " + ChatColor.GREEN + player.getName());
     }
 
+    public String getMaterialName() { return this.materialName; }
 
     public Integer getPoint() {
         return this.point;

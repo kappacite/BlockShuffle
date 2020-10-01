@@ -32,10 +32,9 @@ public class Round {
             for (ShufflePlayer shufflePlayer : shufflePlayerList) {
                 if(!shufflePlayer.hasFound()) numberNotFound++;
             }
-
-            Bukkit.broadcastMessage(ChatColor.DARK_GRAY + "[" + ChatColor.BLUE + "BlockShuffle"
-                    + ChatColor.DARK_GRAY + "]" + ChatColor.DARK_RED + " " + numberNotFound + ChatColor.RED + " joueurs n'ont pas trouvé leurs bloc.");
+            this.blockShuffle.getMessageManager().sendNotFoundBlocksPlayer(numberNotFound);
         }
+
         this.id++;
         this.timer = 30;
         this.blockManager.giveBlocks();

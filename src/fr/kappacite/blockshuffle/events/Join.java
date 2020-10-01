@@ -3,6 +3,7 @@ package fr.kappacite.blockshuffle.events;
 import fr.kappacite.blockshuffle.BlockShuffle;
 import fr.kappacite.blockshuffle.objects.game.Game;
 import fr.kappacite.blockshuffle.objects.manager.TasksManager;
+import jdk.nashorn.internal.ir.Block;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -28,8 +29,6 @@ public class Join implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
 
-
-
         Player player = event.getPlayer();
         Game game = BlockShuffle.getInstance().getGame();
         TasksManager tasksManager = BlockShuffle.getInstance().getTasksManager();
@@ -42,8 +41,7 @@ public class Join implements Listener {
         player.getInventory().clear();
         player.getEquipment().setArmorContents(new ItemStack[]{});
 
-        event.setJoinMessage("§8[§9BlockShuffle§8] §a" + player.getName() + " §7a rejoint la partie ! §8(§a" +
-                Bukkit.getOnlinePlayers().size() + "§8/§a" + game.getMaxPlayers() + "§8)");
+        event.setJoinMessage(BlockShuffle.getInstance().getMessageManager().getJoinMessage(player));
 
         BlockShuffle.getInstance().getScoreboardManager().createScoreboard(player);
         BlockShuffle.getInstance().getPackets().sendTablist(player);

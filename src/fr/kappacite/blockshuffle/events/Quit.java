@@ -21,12 +21,13 @@ public class Quit implements Listener {
         TasksManager tasksManager = BlockShuffle.getInstance().getTasksManager();
 
         if(Bukkit.getOnlinePlayers().size() < game.getMinPlayers() && tasksManager.isStarted()){
-            event.setQuitMessage("§8[§9BlockShuffle§8] §c" + player.getName() + " §7a quitté la partie ! §8(§c" + Bukkit.getOnlinePlayers().size()
-                    + "§8/§c" + game.getMaxPlayers() + "§8)");
             tasksManager.stopPregameTimer();
         }
 
+        event.setQuitMessage(BlockShuffle.getInstance().getMessageManager().getQuitMessage(player));
+
         if(GameState.isState(GameState.GAME)){
+
             ShufflePlayer.deleteInstance(player);
 
             if(ShufflePlayer.getShufflePlayers().size() == 1){

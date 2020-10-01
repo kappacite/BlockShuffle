@@ -80,7 +80,6 @@ public class TasksManager {
 
                 if(player.getLocation().add(0, -1, 0).getBlock().getType() == shufflePlayer.getMaterial()){
                     boolean isWin = blockShuffle.getBlockManager().found(shufflePlayer);
-                    System.out.println(isWin);
                     if(isWin){
                         blockShuffle.getGame().win(shufflePlayer);
                         return;

@@ -4,13 +4,10 @@ import fr.kappacite.blockshuffle.commands.StartCommand;
 import fr.kappacite.blockshuffle.events.Join;
 import fr.kappacite.blockshuffle.events.MicroEvents;
 import fr.kappacite.blockshuffle.events.Quit;
-import fr.kappacite.blockshuffle.objects.manager.BlockManager;
+import fr.kappacite.blockshuffle.objects.manager.*;
 import fr.kappacite.blockshuffle.objects.game.Game;
 import fr.kappacite.blockshuffle.objects.state.GameState;
 import fr.kappacite.blockshuffle.nms.Packets;
-import fr.kappacite.blockshuffle.objects.manager.TasksManager;
-import fr.kappacite.blockshuffle.objects.manager.ScoreboardManager;
-import fr.kappacite.blockshuffle.objects.manager.WorldManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,6 +19,7 @@ public class BlockShuffle extends JavaPlugin {
     private TasksManager tasksManager;
     private WorldManager worldManager;
     private BlockManager blockManager;
+    private MessageManager messageManager;
     private ScoreboardManager scoreboardManager;
     private Packets packets;
     private Game game;
@@ -50,6 +48,7 @@ public class BlockShuffle extends JavaPlugin {
         this.tasksManager = new TasksManager();
         this.blockManager = new BlockManager();
         this.scoreboardManager = new ScoreboardManager();
+        this.messageManager = new MessageManager();
         this.game = new Game();
         this.worldManager.initialiseWorld();
 
@@ -91,5 +90,9 @@ public class BlockShuffle extends JavaPlugin {
 
     public ScoreboardManager getScoreboardManager() {
         return scoreboardManager;
+    }
+
+    public MessageManager getMessageManager() {
+        return messageManager;
     }
 }

@@ -1,14 +1,13 @@
 package fr.kappacite.blockshuffle.objects.manager;
 
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.World;
+import org.bukkit.WorldCreator;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Comparator;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class WorldManager {
@@ -74,10 +73,10 @@ public class WorldManager {
 
     public void eraseWorld() throws URISyntaxException {
 
-        String serverPath = Paths.get(Bukkit.getServer().getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParent().toFile().getPath();
+        String serverPath = Paths.get(Bukkit.getServer().getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParent().toFile().getPath() + "\\blockshuffle";
 
-        System.out.println(serverPath + "\\blockshuffle");
-        File world = new File(serverPath + "\\blockshuffle");
+        System.out.println(serverPath);
+        File world = new File(serverPath);
         erase(world);
 
     }
@@ -86,17 +85,10 @@ public class WorldManager {
         File[] list = file.listFiles();
         if (list != null) {
             for (File temp : list) {
-                //recursive delete
-                System.out.println("Visit " + temp);
                 erase(temp);
             }
         }
-
-        if (file.delete()) {
-            System.out.printf("Delete : %s%n", file);
-        } else {
-            System.err.printf("Unable to delete file or directory : %s%n", file);
-        }
+        file.delete();
     }
 
     private void createWorld(){
